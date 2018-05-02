@@ -8,12 +8,19 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private Text healthBar;
+    private GameObject boss;
+    [SerializeField]
+    private Text playerHealthBar;
+    [SerializeField]
+    private Text bossHealthBar;
     private PlayerStats playerStats;
+    private BossController bossController;
 
     void Start () {
         playerStats = player.GetComponent<PlayerStats>();
-        healthBar.text = playerStats.GetCurrentHealth().ToString();
+        bossController = boss.GetComponent<BossController>();
+        playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
+        bossHealthBar.text = bossController.GetCurrentHealth().ToString();
         InvokeRepeating("UpdateHPBar", 0.1f, 0.1f);
     }
 	
@@ -34,6 +41,7 @@ public class GameManager : MonoBehaviour {
 
     public void UpdateHPBar()
     {
-        healthBar.text = playerStats.GetCurrentHealth().ToString();
+        playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
+        bossHealthBar.text = bossController.GetCurrentHealth().ToString();
     }
 }
