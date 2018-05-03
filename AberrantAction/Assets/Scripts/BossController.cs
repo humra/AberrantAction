@@ -8,9 +8,19 @@ public class BossController : MonoBehaviour {
     [SerializeField]
     private int maxHP = 1000;
     private int currentHP;
+    [SerializeField]
+    private List<GameObject> enemies;
+    [SerializeField]
+    private BossProjectile bossAttack;
+    [SerializeField]
+    private GameObject firingPoint;
+    [SerializeField]
+    private float attackRate = 5f;
 
 	void Start () {
         currentHP = maxHP;
+        enemies = new List<GameObject>();
+        InvokeRepeating("Attack", 3f, attackRate);
 	}
 	
 	void Update () {
@@ -47,4 +57,40 @@ public class BossController : MonoBehaviour {
             Destroy(collision.gameObject);
         }
     }
+
+    public void AddNewEnemy(GameObject enemy)
+    {
+        enemies.Add(enemy);
+    }
+
+    private void Attack()
+    {
+        if(enemies.Count == 0)
+        {
+            return;
+        }
+
+        GameObject target = enemies[UnityEngine.Random.Range(0, enemies.Count)];
+
+        BossProjectile instance = Instantiate(bossAttack, firingPoint.transform.position, firingPoint.transform.rotation);
+        instance.SetTargetEnemy(target);
+
+        //CheckForDeaths();
+    }
+
+    public void RemoveFromTargets(GameObject enemy)
+    {
+        enemies.Remove(enemy);
+    }
+
+    //private void CheckForDeaths()
+    //{
+    //    foreach(GameObject enemy in enemies)
+    //    {
+    //        if(enemy.GetComponent<MarineEnemy>().GetCurrentHealth() <= 0)
+    //        {
+    //            enemies.Remove(enemy);
+    //        }
+    //    }
+    //}
 }

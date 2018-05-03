@@ -9,9 +9,12 @@ public class MarineEnemy : MonoBehaviour {
     [SerializeField]
     private GameObject projectileSpawnPoint;
     [SerializeField]
-    private GameObject target;
+    private BossController target;
+    [SerializeField]
+    private int health = 20;
 
 	void Start () {
+        target = FindObjectOfType<BossController>();
         InvokeRepeating("Shoot", 1f, 3f);
 	}
 	
@@ -31,5 +34,29 @@ public class MarineEnemy : MonoBehaviour {
         float angle = Mathf.Atan2(aimTarget.y, aimTarget.x) * Mathf.Rad2Deg;
 
         instance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            target.RemoveFromTargets(this.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag.Equals("BossProjectile"))
+        {
+            TakeDamage(collision.gameObject.GetComponent<BossProjectile>().GetDamage());
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public int GetCurrentHealth()
+    {
+        return health;
     }
 }
