@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
     private float movementSpeed;
     [SerializeField]
     private float interpolation;
-
     private Vector2 facingDirection;
     private Rigidbody2D rb;
 	

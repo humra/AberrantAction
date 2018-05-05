@@ -74,8 +74,6 @@ public class BossController : MonoBehaviour {
 
         BossProjectile instance = Instantiate(bossAttack, firingPoint.transform.position, firingPoint.transform.rotation);
         instance.SetTargetEnemy(target);
-
-        //CheckForDeaths();
     }
 
     public void RemoveFromTargets(GameObject enemy)
@@ -83,14 +81,8 @@ public class BossController : MonoBehaviour {
         enemies.Remove(enemy);
     }
 
-    //private void CheckForDeaths()
-    //{
-    //    foreach(GameObject enemy in enemies)
-    //    {
-    //        if(enemy.GetComponent<MarineEnemy>().GetCurrentHealth() <= 0)
-    //        {
-    //            enemies.Remove(enemy);
-    //        }
-    //    }
-    //}
+    public int GetNumberOfEnemies()
+    {
+        return enemies.Count;
+    }
 }

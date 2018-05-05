@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
     private GameObject[] enemySpawnPoints;
     [SerializeField]
     private GameObject[] enemyTypes;
+    [SerializeField]
+    private float spawnRate = 1f;
 
     void Start () {
         playerStats = player.GetComponent<PlayerStats>();
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour {
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
         bossHealthBar.text = bossController.GetCurrentHealth().ToString();
         InvokeRepeating("UpdateHPBar", 0.1f, 0.1f);
-        InvokeRepeating("SpawnEnemy", 1f, 3f);
+        InvokeRepeating("SpawnEnemy", 1f, spawnRate);
     }
 	
 	void Update () {
@@ -51,6 +53,11 @@ public class GameManager : MonoBehaviour {
 
     private void SpawnEnemy()
     {
+        if(bossController.GetNumberOfEnemies() >= enemySpawnPoints.Length)
+        {
+            return;
+        }
+
         int position;
         int counter = 0;
         do

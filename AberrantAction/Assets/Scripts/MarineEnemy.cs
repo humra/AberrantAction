@@ -12,10 +12,20 @@ public class MarineEnemy : MonoBehaviour {
     private BossController target;
     [SerializeField]
     private int health = 20;
+    [SerializeField]
+    private float fireRate = 1f;
+    private bool isStunned = false;
+    [SerializeField]
+    private float stunDuration = 3f;
+    [SerializeField]
+    private PlayerController player;
+    [SerializeField]
+    private float stunRange = 5f;
 
 	void Start () {
         target = FindObjectOfType<BossController>();
-        InvokeRepeating("Shoot", 1f, 3f);
+        player = FindObjectOfType<PlayerController>();
+        InvokeRepeating("Shoot", 1f, fireRate);
 	}
 	
 	void Update () {
@@ -24,6 +34,11 @@ public class MarineEnemy : MonoBehaviour {
 
     private void Shoot()
     {
+        if(isStunned)
+        {
+            return;
+        }
+
         GameObject instance = Instantiate(attackType, projectileSpawnPoint.transform.position, transform.rotation);
         
         Vector3 aimTarget = target.transform.position;
@@ -58,5 +73,20 @@ public class MarineEnemy : MonoBehaviour {
     public int GetCurrentHealth()
     {
         return health;
+    }
+
+    private void OnMouseDown()
+    {
+        if(Vector2.Distance(this.gameObject.transform.position, player.gameObject.transform.position) <= stunRange)
+        {
+            StartCoroutine(StunDisable(stunDuration));
+        }
+    }
+
+    private IEnumerator StunDisable(float stunTime)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(stunTime);
+        isStunned = false;
     }
 }

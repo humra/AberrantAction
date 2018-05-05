@@ -137,6 +137,11 @@ MonoBehaviour:
   attackType: {fileID: 1110082781681580, guid: 749c0a4861794ce49a33b01e4feed9dc, type: 2}
   projectileSpawnPoint: {fileID: 1311808275116052}
   target: {fileID: 0}
+  health: 20
+  fireRate: 1
+  stunDuration: 3
+  player: {fileID: 114346992261562236, guid: ba71b76bf84d17742ba81919ba91f07c, type: 2}
+  stunRange: 1.5
 --- !u!212 &212215389925788340
 SpriteRenderer:
   m_ObjectHideFlags: 1
