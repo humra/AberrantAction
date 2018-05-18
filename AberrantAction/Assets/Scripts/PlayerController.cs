@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour {
     private float interpolation;
     private Vector2 facingDirection;
     private Rigidbody2D rb;
+    [SerializeField]
+    private float stunCooldown = 1f;
+    private float stunTimeStamp;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         facingDirection = Vector2.zero;
+        stunTimeStamp = Time.time;
 	}
 	
 	
@@ -29,5 +33,20 @@ public class PlayerController : MonoBehaviour {
             facingDirection = rb.velocity.normalized;
         }
         transform.up = facingDirection;
+    }
+
+    public bool IsStunOnCooldown()
+    {
+        if(stunTimeStamp <= Time.time)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void StunActivated()
+    {
+        stunTimeStamp = Time.time + stunCooldown;
     }
 }

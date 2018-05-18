@@ -804,6 +804,7 @@ MonoBehaviour:
   - {fileID: 1987112975}
   enemyTypes:
   - {fileID: 1543091843262082, guid: 1cd90ccb4897a0141b21b9e7970af46d, type: 2}
+  spawnRate: 1
 --- !u!4 &909510670
 Transform:
   m_ObjectHideFlags: 0

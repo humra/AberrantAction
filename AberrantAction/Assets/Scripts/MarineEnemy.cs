@@ -77,9 +77,11 @@ public class MarineEnemy : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if(Vector2.Distance(this.gameObject.transform.position, player.gameObject.transform.position) <= stunRange)
+        if(Vector2.Distance(this.gameObject.transform.position, player.gameObject.transform.position) <= stunRange && !player.IsStunOnCooldown())
         {
             StartCoroutine(StunDisable(stunDuration));
+            player.StunActivated();
+            GetComponent<AudioSource>().Play();
         }
     }
 

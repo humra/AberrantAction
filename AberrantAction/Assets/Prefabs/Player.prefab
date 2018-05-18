@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 6
   interpolation: 0.8
+  stunCooldown: 1
 --- !u!212 &212516836732090988
 SpriteRenderer:
   m_ObjectHideFlags: 1
