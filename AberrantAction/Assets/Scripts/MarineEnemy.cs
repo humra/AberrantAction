@@ -11,7 +11,9 @@ public class MarineEnemy : MonoBehaviour {
     [SerializeField]
     private BossController target;
     [SerializeField]
-    private int health = 20;
+    private float health = 20;
+    [SerializeField]
+    private float damageTakenMultiplier = 1f;
     [SerializeField]
     private float fireRate = 1f;
     private bool isStunned = false;
@@ -51,9 +53,9 @@ public class MarineEnemy : MonoBehaviour {
         instance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        health -= damage;
+        health -= Mathf.Floor(damage * damageTakenMultiplier);
         if(health <= 0)
         {
             target.RemoveFromTargets(this.gameObject);
@@ -70,7 +72,7 @@ public class MarineEnemy : MonoBehaviour {
         }
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return health;
     }

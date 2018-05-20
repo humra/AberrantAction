@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyProjectileStats : MonoBehaviour {
 
     [SerializeField]
-    private int damage = 10;
+    private float damage = 10f;
     [SerializeField]
     private float speed = 10f;
     private Rigidbody2D rb;
 
-    public int GetDamage()
+    public float GetDamage()
     {
         return damage;
     }

@@ -32,13 +32,10 @@ public class GameManager : MonoBehaviour {
     }
 	
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.R))
-        {
-            DealDamageToPlayer(10);
-        }
+
 	}
 
-    private void DealDamageToPlayer(int damage)
+    private void DealDamageToPlayer(float damage)
     {
         playerStats.TakeDamage(damage);
 

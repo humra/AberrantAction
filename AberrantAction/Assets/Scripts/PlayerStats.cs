@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
     [SerializeField]
-    private int maxHP = 100;
+    private float maxHP = 100f;
     [SerializeField]
-    private int regenFactorPerSecond = 1;
-    private int currentHP;
+    private float regenFactorPerSecond = 1;
+    [SerializeField]
+    private float damageTakenMultiplier = 1f;
+    private float currentHP;
 
 	void Start () {
         currentHP = maxHP;
@@ -20,16 +22,16 @@ public class PlayerStats : MonoBehaviour {
 		
 	}
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        currentHP -= damage;
+        currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
         if(currentHP < 0)
         {
             currentHP = 0;
         }
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return currentHP;
     }

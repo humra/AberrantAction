@@ -186,10 +186,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1000
+  damageTakenMultiplier: 2
   enemies: []
   bossAttack: {fileID: 114542350680574520, guid: eb29a96544c9154408a217b1dfa3dd7a,
     type: 2}
   firingPoint: {fileID: 1004623407908484}
+  attackRate: 5
 --- !u!212 &212740832313550856
 SpriteRenderer:
   m_ObjectHideFlags: 1

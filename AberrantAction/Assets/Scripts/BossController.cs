@@ -6,8 +6,10 @@ using UnityEngine;
 public class BossController : MonoBehaviour {
 
     [SerializeField]
-    private int maxHP = 1000;
-    private int currentHP;
+    private float maxHP = 1000f;
+    [SerializeField]
+    private float damageTakenMultiplier = 1f;
+    private float currentHP;
     [SerializeField]
     private List<GameObject> enemies;
     [SerializeField]
@@ -35,16 +37,16 @@ public class BossController : MonoBehaviour {
         //TO-DO
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        currentHP -= damage;
+        currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
         if (currentHP < 0)
         {
             currentHP = 0;
         }
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return currentHP;
     }
