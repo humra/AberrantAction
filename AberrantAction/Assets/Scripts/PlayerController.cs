@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float stunCooldown = 1f;
     private float stunTimeStamp;
+    private bool isDisabled = false;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour {
 	
 	
 	void Update () {
+
+        if(isDisabled)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
 
         Vector2 movementVector = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal") * movementSpeed, interpolation),
         Mathf.Lerp(0, Input.GetAxis("Vertical") * movementSpeed, interpolation));
@@ -48,5 +55,10 @@ public class PlayerController : MonoBehaviour {
     public void StunActivated()
     {
         stunTimeStamp = Time.time + stunCooldown;
+    }
+
+    public void SetDisabled(bool disabledStatus)
+    {
+        this.isDisabled = disabledStatus;
     }
 }

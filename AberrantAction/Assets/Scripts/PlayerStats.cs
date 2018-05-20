@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,8 +28,14 @@ public class PlayerStats : MonoBehaviour {
         currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
         if(currentHP < 0)
         {
+            Die();
             currentHP = 0;
         }
+    }
+
+    private void Die()
+    {
+        FindObjectOfType<GameManager>().GameOver();
     }
 
     public float GetCurrentHealth()

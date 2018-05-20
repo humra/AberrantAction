@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -90,6 +91,11 @@ public class MarineEnemy : MonoBehaviour {
             player.StunActivated();
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    public void StopAllActions()
+    {
+        CancelInvoke();
     }
 
     private IEnumerator StunDisable(float stunTime)

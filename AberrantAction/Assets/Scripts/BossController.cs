@@ -34,7 +34,7 @@ public class BossController : MonoBehaviour {
 
     private void Die()
     {
-        //TO-DO
+        FindObjectOfType<GameManager>().GameOver();
     }
 
     public void TakeDamage(float damage)
@@ -86,5 +86,10 @@ public class BossController : MonoBehaviour {
     public int GetNumberOfEnemies()
     {
         return enemies.Count;
+    }
+
+    public void StopAllActions()
+    {
+        CancelInvoke();
     }
 }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private Text bossHealthBar;
     private PlayerStats playerStats;
+    private PlayerController playerController;
     private BossController bossController;
     [SerializeField]
     private GameObject[] enemySpawnPoints;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
     void Start () {
         playerStats = player.GetComponent<PlayerStats>();
         bossController = boss.GetComponent<BossController>();
+        playerController = player.GetComponent<PlayerController>();
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
         bossHealthBar.text = bossController.GetCurrentHealth().ToString();
         InvokeRepeating("UpdateHPBar", 0.1f, 0.1f);
@@ -75,5 +77,17 @@ public class GameManager : MonoBehaviour {
         instance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
 
         bossController.AddNewEnemy(instance);
+    }
+
+    public void GameOver()
+    {
+        MarineEnemy[] allEnemies = FindObjectsOfType<MarineEnemy>();
+        foreach(MarineEnemy enemy in allEnemies)
+        {
+            enemy.StopAllActions();
+        }
+        playerController.SetDisabled(true);
+        bossController.StopAllActions();
+        CancelInvoke();
     }
 }
