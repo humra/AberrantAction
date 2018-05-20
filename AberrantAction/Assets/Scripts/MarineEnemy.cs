@@ -15,7 +15,9 @@ public class MarineEnemy : MonoBehaviour {
     [SerializeField]
     private float damageTakenMultiplier = 1f;
     [SerializeField]
-    private float fireRate = 1f;
+    private float fireRateInSeconds = 1f;
+    [SerializeField]
+    private float initialFiringDelayInSeconds = 3f;
     private bool isStunned = false;
     [SerializeField]
     private float stunDuration = 3f;
@@ -23,11 +25,14 @@ public class MarineEnemy : MonoBehaviour {
     private PlayerController player;
     [SerializeField]
     private float stunRange = 5f;
+    [SerializeField]
+    private SpriteRenderer stunSprite;
 
 	void Start () {
         target = FindObjectOfType<BossController>();
         player = FindObjectOfType<PlayerController>();
-        InvokeRepeating("Shoot", 1f, fireRate);
+        stunSprite.enabled = isStunned;
+        InvokeRepeating("Shoot", initialFiringDelayInSeconds, fireRateInSeconds);
 	}
 	
 	void Update () {
@@ -90,7 +95,14 @@ public class MarineEnemy : MonoBehaviour {
     private IEnumerator StunDisable(float stunTime)
     {
         isStunned = true;
+        UpdateStun();
         yield return new WaitForSeconds(stunTime);
         isStunned = false;
+        UpdateStun();
+    }
+
+    private void UpdateStun()
+    {
+        stunSprite.enabled = isStunned;
     }
 }
