@@ -34,7 +34,7 @@ public class BossController : MonoBehaviour {
 
     private void Die()
     {
-        FindObjectOfType<GameManager>().GameOver();
+        FindObjectOfType<GameManager>().GameOver("BOSS");
     }
 
     public void TakeDamage(float damage)

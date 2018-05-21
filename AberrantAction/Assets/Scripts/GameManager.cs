@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour {
     private GameObject[] enemyTypes;
     [SerializeField]
     private float spawnRate = 1f;
+    [SerializeField]
+    private GameObject gameOverScreen;
 
     void Start () {
         playerStats = player.GetComponent<PlayerStats>();
@@ -79,8 +82,9 @@ public class GameManager : MonoBehaviour {
         bossController.AddNewEnemy(instance);
     }
 
-    public void GameOver()
+    public void GameOver(string cause)
     {
+        UpdateHPBar();
         MarineEnemy[] allEnemies = FindObjectsOfType<MarineEnemy>();
         foreach(MarineEnemy enemy in allEnemies)
         {
@@ -89,5 +93,17 @@ public class GameManager : MonoBehaviour {
         playerController.SetDisabled(true);
         bossController.StopAllActions();
         CancelInvoke();
+        gameOverScreen.SetActive(true);
+        GameObject.Find("GameOverDeathText").GetComponent<Text>().text = cause + " DIED";
+    }
+
+    public void LoadDifferentScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -28,14 +28,14 @@ public class PlayerStats : MonoBehaviour {
         currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
         if(currentHP < 0)
         {
-            Die();
             currentHP = 0;
+            Die();
         }
     }
 
     private void Die()
     {
-        FindObjectOfType<GameManager>().GameOver();
+        FindObjectOfType<GameManager>().GameOver("PLAYER");
     }
 
     public float GetCurrentHealth()

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 30
+  controlID: 13
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 31
+  controlID: 14
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -428,9 +428,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 162a0000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: 0443ffff0472ffff9efbffff00000000f42a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -481,14 +481,14 @@ MonoBehaviour:
     height: 656
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 127.56392610576118
+  lastFramingTime: 1003.9701172332049
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.6044178, y: 1.3900927, z: -0.076171875}
+    m_Target: {x: 1038.6373, y: 641.3154, z: -13}
     speed: 2
-    m_Value: {x: 0.6044178, y: 1.3900927, z: -0.076171875}
+    m_Value: {x: 1038.6373, y: 641.3154, z: -13}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -516,9 +516,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.80631
+    m_Target: 1548.8142
     speed: 2
-    m_Value: 8.80631
+    m_Value: 1548.8142
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -639,18 +639,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 72
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: 72
   m_LastProjectPath: D:\Github\AberrantAction\AberrantAction
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4290000
-    m_LastClickedID: 10740
+    m_SelectedIDs: 70270000
+    m_LastClickedID: 10096
     m_ExpandedIDs: 0000000068270000a2270000302a0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: bc2700001e2400001c240000262400006e24000036250000402f00005a2600006cecffff8035000006360000d2260000864e0000924e0000fa84fdff7e27000088270000742900001af9e8ff962a0000046efeffa22a0000dcb9feff86280000803200000c3200005c280000802800008056ffffb22800000e86fdff00000000563d00005c2900006c2700009e270000a227000074270000aa270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
