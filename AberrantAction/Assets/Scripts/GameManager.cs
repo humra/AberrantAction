@@ -85,8 +85,8 @@ public class GameManager : MonoBehaviour {
     public void GameOver(string cause)
     {
         UpdateHPBar();
-        MarineEnemy[] allEnemies = FindObjectsOfType<MarineEnemy>();
-        foreach(MarineEnemy enemy in allEnemies)
+        Enemy[] allEnemies = FindObjectsOfType<Enemy>();
+        foreach(Enemy enemy in allEnemies)
         {
             enemy.StopAllActions();
         }

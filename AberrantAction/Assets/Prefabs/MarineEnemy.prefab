@@ -52,8 +52,8 @@ GameObject:
   - component: {fileID: 4761348267080366}
   - component: {fileID: 212215389925788340}
   - component: {fileID: 60225764793372778}
-  - component: {fileID: 114836417139135990}
   - component: {fileID: 82445005892932052}
+  - component: {fileID: 114668349808724164}
   m_Layer: 0
   m_Name: MarineEnemy
   m_TagString: Untagged
@@ -234,7 +234,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114836417139135990
+--- !u!114 &114668349808724164
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -242,19 +242,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1543091843262082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 500b362b8a4a87e44aeaea5262e7171b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ddfd86cf73023f45bf3b6f69cc97a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackType: {fileID: 1110082781681580, guid: 749c0a4861794ce49a33b01e4feed9dc, type: 2}
   projectileSpawnPoint: {fileID: 1311808275116052}
-  target: {fileID: 0}
   health: 20
   damageTakenMultiplier: 1
   fireRateInSeconds: 1
   initialFiringDelayInSeconds: 3
   stunDuration: 3
-  player: {fileID: 114346992261562236, guid: ba71b76bf84d17742ba81919ba91f07c, type: 2}
-  stunRange: 1.5
+  stunRange: 2
   stunSprite: {fileID: 212490304483775852}
 --- !u!212 &212215389925788340
 SpriteRenderer:
