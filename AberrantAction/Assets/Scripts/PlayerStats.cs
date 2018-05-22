@@ -63,5 +63,20 @@ public class PlayerStats : MonoBehaviour {
             TakeDamage(collision.gameObject.GetComponent<EnemyProjectileStats>().GetDamage());
             Destroy(collision.gameObject);
         }
+        else if(collision.gameObject.tag.Equals("HealthGlobe"))
+        {
+            RestoreHealth(collision.gameObject.GetComponent<HealthGlobe>().GetHealthRestored());
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void RestoreHealth(float healthAmount)
+    {
+        currentHP += healthAmount;
+
+        if(currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
     }
 }

@@ -249,11 +249,14 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 1311808275116052}
   health: 20
   damageTakenMultiplier: 1
-  fireRateInSeconds: 1
+  fireRateInSeconds: 5
   initialFiringDelayInSeconds: 3
   stunDuration: 3
   stunRange: 2
   stunSprite: {fileID: 212490304483775852}
+  healthGlobeValue: 15
+  droppedGlobe: {fileID: 1692433349432096, guid: 00252e9bb15eb994eb5ba774b7244c4e,
+    type: 2}
 --- !u!212 &212215389925788340
 SpriteRenderer:
   m_ObjectHideFlags: 1

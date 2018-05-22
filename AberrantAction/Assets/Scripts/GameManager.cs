@@ -33,7 +33,11 @@ public class GameManager : MonoBehaviour {
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
         bossHealthBar.text = bossController.GetCurrentHealth().ToString();
         InvokeRepeating("UpdateHPBar", 0.1f, 0.1f);
-        InvokeRepeating("SpawnEnemy", 1f, spawnRate);
+
+        if(SceneManager.GetActiveScene().name.Equals("TestingLevel"))
+        {
+            InvokeRepeating("SpawnEnemyInTestingLevel", 1f, spawnRate);
+        }
     }
 	
 	void Update () {
@@ -53,7 +57,7 @@ public class GameManager : MonoBehaviour {
         bossHealthBar.text = bossController.GetCurrentHealth().ToString();
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemyInTestingLevel()
     {
         if(bossController.GetNumberOfEnemies() >= enemySpawnPoints.Length)
         {
@@ -78,6 +82,11 @@ public class GameManager : MonoBehaviour {
         float angle = Mathf.Atan2(aimTarget.y, aimTarget.x) * Mathf.Rad2Deg;
 
         instance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+
+        if(Random.Range(0, 2) % 2 == 0)
+        {
+            instance.GetComponent<Enemy>().SetWillDropHealthGlobe(true);
+        }
 
         bossController.AddNewEnemy(instance);
     }

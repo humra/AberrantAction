@@ -8,6 +8,7 @@ TagManager:
   - Obstructions
   - Boss
   - BossProjectile
+  - HealthGlobe
   layers:
   - Default
   - TransparentFX

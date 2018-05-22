@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour {
     private float stunRange = 5f;
     [SerializeField]
     private SpriteRenderer stunSprite;
+    [SerializeField]
+    private float healthGlobeValue = 15f;
+    [SerializeField]
+    private GameObject droppedGlobe;
+    private bool willDropHealthGlobe = false;
 
     void Start()
     {
@@ -59,6 +64,12 @@ public class Enemy : MonoBehaviour {
         if (health <= 0)
         {
             target.RemoveFromTargets(this.gameObject);
+
+            if(willDropHealthGlobe)
+            {
+                DropHealthGlobe();
+            }
+
             Destroy(gameObject);
         }
     }
@@ -104,5 +115,16 @@ public class Enemy : MonoBehaviour {
     private void UpdateStun()
     {
         stunSprite.enabled = isStunned;
+    }
+
+    public void SetWillDropHealthGlobe(bool willDropGlobe)
+    {
+        this.willDropHealthGlobe = willDropGlobe;
+    }
+
+    private void DropHealthGlobe()
+    {
+        GameObject globe = Instantiate(droppedGlobe, projectileSpawnPoint.transform.position, Quaternion.identity);
+        globe.GetComponent<HealthGlobe>().SetHealthRestored(healthGlobeValue);
     }
 }
