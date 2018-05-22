@@ -25,8 +25,11 @@ public class GameManager : MonoBehaviour {
     private float spawnRate = 1f;
     [SerializeField]
     private GameObject gameOverScreen;
+    [SerializeField]
+    private GameObject pauseScreen;
 
     void Start () {
+        Time.timeScale = 1f;
         playerStats = player.GetComponent<PlayerStats>();
         bossController = boss.GetComponent<BossController>();
         playerController = player.GetComponent<PlayerController>();
@@ -41,8 +44,12 @@ public class GameManager : MonoBehaviour {
     }
 	
 	void Update () {
-
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            pauseScreen.SetActive(true);
+        }
+    }
 
     private void DealDamageToPlayer(float damage)
     {
@@ -93,15 +100,8 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver(string cause)
     {
+        Time.timeScale = 0f;
         UpdateHPBar();
-        Enemy[] allEnemies = FindObjectsOfType<Enemy>();
-        foreach(Enemy enemy in allEnemies)
-        {
-            enemy.StopAllActions();
-        }
-        playerController.SetDisabled(true);
-        bossController.StopAllActions();
-        CancelInvoke();
         gameOverScreen.SetActive(true);
         GameObject.Find("GameOverDeathText").GetComponent<Text>().text = cause + " DIED";
     }
@@ -114,5 +114,11 @@ public class GameManager : MonoBehaviour {
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ResumeLevel()
+    {
+        Time.timeScale = 1f;
+        pauseScreen.SetActive(false);
     }
 }
