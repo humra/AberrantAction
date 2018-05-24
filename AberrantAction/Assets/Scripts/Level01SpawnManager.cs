@@ -13,6 +13,8 @@ public class Level01SpawnManager : MonoBehaviour {
     private TextAsset waveSettings;
     [SerializeField]
     private GameObject bossAimTarget;
+    [SerializeField]
+    private BossController bossController;
 
     private string[] waves;
     private float[] delays;
@@ -21,15 +23,23 @@ public class Level01SpawnManager : MonoBehaviour {
     private bool[] healthGlobeSpawned;
     private float timestamp;
     private int waveCounter;
+    private bool levelComplete;
 
 	void Start () {
         waveCounter = 0;
         LoadWaves();
+        levelComplete = false;
     }
 
     void Update () {
+        if(levelComplete)
+        {
+            return;
+        }
+
         if (waveCounter == waves.Length)
         {
+            CheckForLevelComplete();
             return;
         }
 
@@ -80,5 +90,14 @@ public class Level01SpawnManager : MonoBehaviour {
         FindObjectOfType<BossController>().AddNewEnemy(temp);
 
         waveCounter++;
+    }
+
+    private void CheckForLevelComplete()
+    {
+        if(bossController.GetNumberOfEnemies() == 0)
+        {
+            levelComplete = true;
+            FindObjectOfType<GameManager>().LevelComplete();
+        }
     }
 }

@@ -249,7 +249,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 1311808275116052}
   health: 20
   damageTakenMultiplier: 1
-  fireRateInSeconds: 5
+  fireRateInSeconds: 8
   initialFiringDelayInSeconds: 3
   stunDuration: 3
   stunRange: 2

@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour {
     private GameObject gameOverScreen;
     [SerializeField]
     private GameObject pauseScreen;
+    [SerializeField]
+    private GameObject levelCompleteScreen;
 
     void Start () {
         Time.timeScale = 1f;
@@ -120,5 +122,12 @@ public class GameManager : MonoBehaviour {
     {
         Time.timeScale = 1f;
         pauseScreen.SetActive(false);
+    }
+
+    public void LevelComplete()
+    {
+        Debug.Log("level complete!");
+        Time.timeScale = 0f;
+        levelCompleteScreen.SetActive(true);
     }
 }
