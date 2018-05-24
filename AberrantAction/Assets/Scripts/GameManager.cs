@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] enemySpawnPoints;
     [SerializeField]
-    private GameObject[] enemyTypes;
+    private Enemy[] enemyTypes;
     [SerializeField]
     private float spawnRate = 1f;
     [SerializeField]
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
             counter += 1;
         } while (enemySpawnPoints[position].transform.childCount > 0 && counter < enemySpawnPoints.Length);
 
-        GameObject instance = Instantiate(enemyTypes[0], enemySpawnPoints[position].transform);
+        Enemy instance = Instantiate(enemyTypes[0], enemySpawnPoints[position].transform);
 
         Vector3 aimTarget = bossController.transform.position;
         aimTarget.z = 0f;

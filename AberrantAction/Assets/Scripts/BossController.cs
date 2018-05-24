@@ -11,7 +11,7 @@ public class BossController : MonoBehaviour {
     private float damageTakenMultiplier = 1f;
     private float currentHP;
     [SerializeField]
-    private List<GameObject> enemies;
+    private List<Enemy> enemies;
     [SerializeField]
     private BossProjectile bossAttack;
     [SerializeField]
@@ -21,7 +21,7 @@ public class BossController : MonoBehaviour {
 
 	void Start () {
         currentHP = maxHP;
-        enemies = new List<GameObject>();
+        enemies = new List<Enemy>();
         InvokeRepeating("Attack", 3f, attackRate);
 	}
 	
@@ -60,7 +60,7 @@ public class BossController : MonoBehaviour {
         }
     }
 
-    public void AddNewEnemy(GameObject enemy)
+    public void AddNewEnemy(Enemy enemy)
     {
         enemies.Add(enemy);
     }
@@ -72,13 +72,13 @@ public class BossController : MonoBehaviour {
             return;
         }
 
-        GameObject target = enemies[UnityEngine.Random.Range(0, enemies.Count)];
+        Enemy target = enemies[UnityEngine.Random.Range(0, enemies.Count)];
 
         BossProjectile instance = Instantiate(bossAttack, firingPoint.transform.position, firingPoint.transform.rotation);
-        instance.SetTargetEnemy(target);
+        instance.SetTargetEnemy(target.gameObject);
     }
 
-    public void RemoveFromTargets(GameObject enemy)
+    public void RemoveFromTargets(Enemy enemy)
     {
         enemies.Remove(enemy);
     }

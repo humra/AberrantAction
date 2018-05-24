@@ -676,6 +676,12 @@ Prefab:
       propertyPath: pauseScreen
       value: 
       objectReference: {fileID: 593814418}
+    - target: {fileID: 114612243053743764, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: enemyTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 114668349808724164, guid: 1cd90ccb4897a0141b21b9e7970af46d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf, type: 2}
   m_IsPrefabParent: 0

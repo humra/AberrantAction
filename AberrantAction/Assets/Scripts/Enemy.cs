@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour {
         health -= Mathf.Floor(damage * damageTakenMultiplier);
         if (health <= 0)
         {
-            target.RemoveFromTargets(this.gameObject);
+            target.RemoveFromTargets(this);
 
             if(willDropHealthGlobe)
             {
