@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour {
     private float healthGlobeValue = 15f;
     [SerializeField]
     private GameObject droppedGlobe;
+    [SerializeField]
+    private GameObject healthGlobeDropIndicator;
     private bool willDropHealthGlobe = false;
 
     void Start()
@@ -36,6 +38,7 @@ public class Enemy : MonoBehaviour {
         target = FindObjectOfType<BossController>();
         player = FindObjectOfType<PlayerController>();
         stunSprite.enabled = isStunned;
+        healthGlobeDropIndicator.SetActive(willDropHealthGlobe);
         InvokeRepeating("Shoot", initialFiringDelayInSeconds, fireRateInSeconds);
     }
 

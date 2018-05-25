@@ -682,6 +682,16 @@ Prefab:
       value: 
       objectReference: {fileID: 114668349808724164, guid: 1cd90ccb4897a0141b21b9e7970af46d,
         type: 2}
+    - target: {fileID: 114612243053743764, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 2084668147}
+    - target: {fileID: 114612243053743764, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: levelCompleteScreen
+      value: 
+      objectReference: {fileID: 1892751733}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf, type: 2}
   m_IsPrefabParent: 0
@@ -754,6 +764,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 310775572}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1892751733 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1957339856863652, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
 --- !u!1 &1968873512 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1299196097223554, guid: 6deb13a5769d5f9458f062571f909c14,
@@ -769,3 +784,9 @@ GameObject:
   m_PrefabParentObject: {fileID: 1836515580131110, guid: 6deb13a5769d5f9458f062571f909c14,
     type: 2}
   m_PrefabInternal: {fileID: 1171641246}
+--- !u!114 &2084668147 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114766231637969162, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
