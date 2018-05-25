@@ -66,6 +66,7 @@ public class PlayerStats : MonoBehaviour {
         else if(collision.gameObject.tag.Equals("HealthGlobe"))
         {
             RestoreHealth(collision.gameObject.GetComponent<HealthGlobe>().GetHealthRestored());
+            FindObjectOfType<PlayerController>().HealthGlobeSoundEffect();
             Destroy(collision.gameObject);
         }
     }

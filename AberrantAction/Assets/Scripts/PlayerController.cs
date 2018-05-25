@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour {
     private float stunCooldown = 1f;
     private float stunTimeStamp;
     private bool isDisabled = false;
+    [SerializeField]
+    private AudioClip healthGlobeSoundEffect;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -60,5 +63,11 @@ public class PlayerController : MonoBehaviour {
     public void SetDisabled(bool disabledStatus)
     {
         this.isDisabled = disabledStatus;
+    }
+
+    public void HealthGlobeSoundEffect()
+    {
+        GetComponent<AudioSource>().clip = healthGlobeSoundEffect;
+        GetComponent<AudioSource>().Play();
     }
 }
