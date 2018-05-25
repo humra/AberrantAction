@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
     private GameObject pauseScreen;
     [SerializeField]
     private GameObject levelCompleteScreen;
+    [SerializeField]
+    private Text timerText;
 
     void Start () {
         Time.timeScale = 1f;
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
         }
+
+        timerText.text = ((int)Time.time).ToString();
     }
 
     private void DealDamageToPlayer(float damage)

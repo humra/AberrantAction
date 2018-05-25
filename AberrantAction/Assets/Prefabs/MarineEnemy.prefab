@@ -247,11 +247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: {fileID: 1110082781681580, guid: 749c0a4861794ce49a33b01e4feed9dc, type: 2}
   projectileSpawnPoint: {fileID: 1311808275116052}
-  health: 20
+  health: 15
   damageTakenMultiplier: 1
-  fireRateInSeconds: 8
-  initialFiringDelayInSeconds: 3
-  stunDuration: 3
+  fireRateInSeconds: 7
+  initialFiringDelayInSeconds: 2
+  stunDuration: 2
   stunRange: 2
   stunSprite: {fileID: 212490304483775852}
   healthGlobeValue: 15

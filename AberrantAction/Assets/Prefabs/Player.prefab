@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  regenFactorPerSecond: 1
+  regenFactorPerSecond: 2
   damageTakenMultiplier: 1
 --- !u!114 &114346992261562236
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 6
   interpolation: 0.8
-  stunCooldown: 1
+  stunCooldown: 3
 --- !u!212 &212516836732090988
 SpriteRenderer:
   m_ObjectHideFlags: 1

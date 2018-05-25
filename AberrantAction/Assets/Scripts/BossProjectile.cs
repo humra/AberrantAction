@@ -14,6 +14,7 @@ public class BossProjectile : MonoBehaviour {
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Physics2D.IgnoreCollision(FindObjectOfType<PlayerController>().GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
     }
 
     private void Update()
@@ -40,7 +41,11 @@ public class BossProjectile : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag.Equals("Obstructions"))
+        if(collision.gameObject.tag.Equals("EnemyProjectile"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider2D>());
+        }
+        else if(collision.gameObject.tag.Equals("Obstructions"))
         {
             Destroy(gameObject);
         }

@@ -60,7 +60,7 @@ public class Level01SpawnManager : MonoBehaviour {
 
         for(int i = 0; i < waves.Length; i++)
         {
-            string[] temp = Regex.Split(waves[i], ",");
+            string[] temp = Regex.Split(waves[i], ";");
 
             delays[i] = float.Parse(temp[0]);
             spawnPointIndexes[i] = int.Parse(temp[1]);
