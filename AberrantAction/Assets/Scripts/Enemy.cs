@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 
     [SerializeField]
     private GameObject attackType;
@@ -19,10 +20,10 @@ public class Enemy : MonoBehaviour {
     private float initialFiringDelayInSeconds = 3f;
     private bool isStunned = false;
     [SerializeField]
-    private float stunDuration = 3f;
+    private float stunDuration;
     private PlayerController player;
     [SerializeField]
-    private float stunRange = 5f;
+    private float stunRange;
     [SerializeField]
     private SpriteRenderer stunSprite;
     [SerializeField]
@@ -32,6 +33,11 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     private GameObject healthGlobeDropIndicator;
     private bool willDropHealthGlobe = false;
+    [SerializeField]
+    private GameObject firingCue;
+    [SerializeField]
+    private float cueDuration = 2f;
+    private float firingTimestamp;
 
     void Start()
     {
@@ -39,7 +45,20 @@ public class Enemy : MonoBehaviour {
         player = FindObjectOfType<PlayerController>();
         stunSprite.enabled = isStunned;
         healthGlobeDropIndicator.SetActive(willDropHealthGlobe);
-        InvokeRepeating("Shoot", initialFiringDelayInSeconds, fireRateInSeconds);
+        firingTimestamp = Time.time + initialFiringDelayInSeconds;
+    }
+
+    private void Update()
+    {
+        if(firingTimestamp - cueDuration <= Time.time)
+        {
+            ShowFiringCue();
+        }
+
+        if(firingTimestamp <= Time.time && !isStunned)
+        {
+            Shoot();
+        }
     }
 
     private void Shoot()
@@ -49,6 +68,16 @@ public class Enemy : MonoBehaviour {
             return;
         }
 
+        FireProjectile();
+    }
+
+    private void ShowFiringCue()
+    {
+        firingCue.SetActive(true);
+    }
+
+    private void FireProjectile()
+    {
         GameObject instance = Instantiate(attackType, projectileSpawnPoint.transform.position, transform.rotation);
 
         Vector3 aimTarget = target.transform.position;
@@ -59,6 +88,10 @@ public class Enemy : MonoBehaviour {
         float angle = Mathf.Atan2(aimTarget.y, aimTarget.x) * Mathf.Rad2Deg;
 
         instance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+
+        firingCue.SetActive(false);
+
+        firingTimestamp = Time.time + fireRateInSeconds;
     }
 
     public void TakeDamage(float damage)
@@ -68,7 +101,7 @@ public class Enemy : MonoBehaviour {
         {
             target.RemoveFromTargets(this);
 
-            if(willDropHealthGlobe)
+            if (willDropHealthGlobe)
             {
                 DropHealthGlobe();
             }
@@ -98,6 +131,8 @@ public class Enemy : MonoBehaviour {
             StartCoroutine(StunDisable(stunDuration));
             player.StunActivated();
             GetComponent<AudioSource>().Play();
+            firingTimestamp = Time.time + fireRateInSeconds;
+            firingCue.SetActive(false);
         }
     }
 

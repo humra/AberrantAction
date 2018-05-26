@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour {
             counter += 1;
         } while (enemySpawnPoints[position].transform.childCount > 0 && counter < enemySpawnPoints.Length);
 
-        Enemy instance = Instantiate(enemyTypes[0], enemySpawnPoints[position].transform);
+        Enemy instance = Instantiate(enemyTypes[Random.Range(0, enemyTypes.Length)], enemySpawnPoints[position].transform);
 
         Vector3 aimTarget = bossController.transform.position;
         aimTarget.z = 0f;

@@ -51,7 +51,7 @@ public class Level01SpawnManager : MonoBehaviour {
 
     private void LoadWaves()
     {
-        waves = Regex.Split(waveSettings.ToString(), "\r\n");
+        waves = Regex.Split(waveSettings.ToString(), "\n|\r\n");
 
         delays = new float[waves.Length];
         spawnPointIndexes = new int[waves.Length];

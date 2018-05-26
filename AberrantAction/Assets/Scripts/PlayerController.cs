@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     private bool isDisabled = false;
     [SerializeField]
     private AudioClip healthGlobeSoundEffect;
+    [SerializeField]
+    private GameObject stunIndicator;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,10 @@ public class PlayerController : MonoBehaviour {
         Mathf.Lerp(0, Input.GetAxis("Vertical") * movementSpeed, interpolation));
         rb.velocity = movementVector;
 
+        if(Time.time >= stunTimeStamp && stunIndicator.active == false)
+        {
+            stunIndicator.SetActive(true);
+        }
 
         if (movementVector != Vector2.zero)
         {
@@ -58,6 +64,7 @@ public class PlayerController : MonoBehaviour {
     public void StunActivated()
     {
         stunTimeStamp = Time.time + stunCooldown;
+        stunIndicator.SetActive(false);
     }
 
     public void SetDisabled(bool disabledStatus)
