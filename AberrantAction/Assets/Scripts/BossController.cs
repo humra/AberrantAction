@@ -18,11 +18,13 @@ public class BossController : MonoBehaviour {
     private GameObject firingPoint;
     [SerializeField]
     private float attackRate = 5f;
+    [SerializeField]
+    private float initialFiringDelay = 3f;
 
 	void Start () {
         currentHP = maxHP;
         enemies = new List<Enemy>();
-        InvokeRepeating("Attack", 3f, attackRate);
+        InvokeRepeating("Attack", initialFiringDelay, attackRate);
 	}
 	
 	void Update () {

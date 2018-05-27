@@ -898,7 +898,9 @@ MonoBehaviour:
   - {fileID: 114668349808724164, guid: c66050431af02274699aca796d0ae62d, type: 2}
   - {fileID: 114668349808724164, guid: 9603476a8b928844f9a8750492cec72d, type: 2}
   - {fileID: 114788851245767016, guid: 2f93eb3a10b1d8e4f9a7168be8719f05, type: 2}
-  waveSettings: {fileID: 4900000, guid: c34cd4e4f769f7a4486844e94c7f5348, type: 3}
+  - {fileID: 114788851245767016, guid: 7ef350bb5f6528149809c72d7772f493, type: 2}
+  - {fileID: 114788851245767016, guid: af81963daf0367d49b4bb5c1bca96637, type: 2}
+  waveSettings: {fileID: 4900000, guid: 1215714e9f950a449a02e428eb95cdd0, type: 3}
   bossAimTarget: {fileID: 813500045}
   bossController: {fileID: 1289212114}
 --- !u!4 &1851744090

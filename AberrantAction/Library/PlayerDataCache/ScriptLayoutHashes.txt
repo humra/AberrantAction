@@ -4,6 +4,7 @@ Assets/Scenes/MainMenu.unity
 Assets/Scenes/TestingLevel.unity
 Assets/Scenes/Level01.unity
 Assets/Scenes/Level02.unity
+Assets/Scenes/Level03.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -121,7 +122,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 085915af262fcff29518f77d55e42958 Assembly-CSharp.dll:.PlayerController
 92a8b1626995efcb187ace43a855d049 Assembly-CSharp.dll:.GameManager
-89e1d375ff6c77668e4bc8372222e487 Assembly-CSharp.dll:.BossController
+8d594a77ca204a98d6d4966f418525af Assembly-CSharp.dll:.BossController
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery

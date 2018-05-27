@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 82256969035343766}
   - component: {fileID: 114788851245767016}
   m_Layer: 0
-  m_Name: HeavyEnemy
+  m_Name: HeavyEnemyMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: {fileID: 1110082781681580, guid: 053c793a254d463488375a63a8074a4e, type: 2}
   projectileSpawnPoint: {fileID: 1400955160892154}
-  health: 20
+  health: 25
   damageTakenMultiplier: 1
   fireRateInSeconds: 9
   initialFiringDelayInSeconds: 3
