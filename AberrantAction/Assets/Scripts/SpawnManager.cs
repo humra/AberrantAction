@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class SpawnManager : MonoBehaviour {
     private GameObject bossAimTarget;
     [SerializeField]
     private BossController bossController;
+    [SerializeField]
+    private Text enemiesLeftText;
 
     private string[] waves;
     private float[] delays;
@@ -29,6 +32,7 @@ public class SpawnManager : MonoBehaviour {
         waveCounter = 0;
         LoadWaves();
         levelComplete = false;
+        enemiesLeftText.text = waves.Length.ToString();
     }
 
     void Update () {
@@ -46,12 +50,13 @@ public class SpawnManager : MonoBehaviour {
         if (timestamp <= Time.time)
         {
             SpawnEnemy();
+            enemiesLeftText.text = (waves.Length - waveCounter).ToString();
         }
     }
 
     private void LoadWaves()
     {
-        waves = Regex.Split(waveSettings.ToString(), "\r\n|\n");
+        waves = Regex.Split(waveSettings.ToString(), "\n|\r\n");
 
         delays = new float[waves.Length];
         spawnPointIndexes = new int[waves.Length];

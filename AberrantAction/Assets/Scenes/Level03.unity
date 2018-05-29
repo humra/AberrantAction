@@ -356,6 +356,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 749996812}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &749996817 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114886895286364668, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &754298140
 Prefab:
   m_ObjectHideFlags: 0
@@ -903,6 +909,7 @@ MonoBehaviour:
   waveSettings: {fileID: 4900000, guid: 1215714e9f950a449a02e428eb95cdd0, type: 3}
   bossAimTarget: {fileID: 813500045}
   bossController: {fileID: 1289212114}
+  enemiesLeftText: {fileID: 749996817}
 --- !u!4 &1851744090
 Transform:
   m_ObjectHideFlags: 0
