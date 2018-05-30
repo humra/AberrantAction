@@ -311,7 +311,7 @@ MonoBehaviour:
   damageTakenMultiplier: 1
   fireRateInSeconds: 10
   initialFiringDelayInSeconds: 3
-  stunDuration: 1
+  stunDuration: 2
   stunRange: 2
   stunSprite: {fileID: 212030880044480428}
   healthGlobeValue: 20

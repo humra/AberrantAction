@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212776421168679802}
   - component: {fileID: 58723834747060974}
   - component: {fileID: 114832484747514450}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: HealthGlobe
   m_TagString: HealthGlobe
   m_Icon: {fileID: 0}

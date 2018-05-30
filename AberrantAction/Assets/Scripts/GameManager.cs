@@ -130,7 +130,6 @@ public class GameManager : MonoBehaviour {
 
     public void LevelComplete()
     {
-        Debug.Log("level complete!");
         Time.timeScale = 0f;
         levelCompleteScreen.SetActive(true);
     }
