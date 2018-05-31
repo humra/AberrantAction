@@ -57,13 +57,6 @@ public class GameManager : MonoBehaviour {
         timerText.text = ((int)Time.time).ToString();
     }
 
-    private void DealDamageToPlayer(float damage)
-    {
-        playerStats.TakeDamage(damage);
-
-        UpdateHPBar();
-    }
-
     public void UpdateHPBar()
     {
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();

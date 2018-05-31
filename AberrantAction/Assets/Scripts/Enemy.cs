@@ -119,11 +119,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float GetCurrentHealth()
-    {
-        return health;
-    }
-
     private void OnMouseDown()
     {
         if (Vector2.Distance(this.gameObject.transform.position, player.gameObject.transform.position) <= stunRange && !player.IsStunOnCooldown())
@@ -134,11 +129,6 @@ public class Enemy : MonoBehaviour
             firingTimestamp = Time.time + fireRateInSeconds;
             firingCue.SetActive(false);
         }
-    }
-
-    public void StopAllActions()
-    {
-        CancelInvoke();
     }
 
     private IEnumerator StunDisable(float stunTime)

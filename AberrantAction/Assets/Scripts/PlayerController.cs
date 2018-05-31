@@ -67,11 +67,6 @@ public class PlayerController : MonoBehaviour {
         stunIndicator.SetActive(false);
     }
 
-    public void SetDisabled(bool disabledStatus)
-    {
-        this.isDisabled = disabledStatus;
-    }
-
     public void HealthGlobeSoundEffect()
     {
         GetComponent<AudioSource>().clip = healthGlobeSoundEffect;

@@ -20,17 +20,24 @@ public class BossController : MonoBehaviour {
     private float attackRate = 5f;
     [SerializeField]
     private float initialFiringDelay = 3f;
+    private float firingTimestamp;
 
 	void Start () {
         currentHP = maxHP;
         enemies = new List<Enemy>();
-        InvokeRepeating("Attack", initialFiringDelay, attackRate);
+        firingTimestamp = Time.time + initialFiringDelay;
 	}
 	
 	void Update () {
 		if(currentHP == 0)
         {
             Die();
+            return;
+        }
+
+        if(firingTimestamp <= Time.time)
+        {
+            Attack();
         }
 	}
 
@@ -78,6 +85,8 @@ public class BossController : MonoBehaviour {
 
         BossProjectile instance = Instantiate(bossAttack, firingPoint.transform.position, firingPoint.transform.rotation);
         instance.SetTargetEnemy(target.gameObject);
+
+        firingTimestamp = Time.time + attackRate;
     }
 
     public void RemoveFromTargets(Enemy enemy)
@@ -88,10 +97,5 @@ public class BossController : MonoBehaviour {
     public int GetNumberOfEnemies()
     {
         return enemies.Count;
-    }
-
-    public void StopAllActions()
-    {
-        CancelInvoke();
     }
 }
