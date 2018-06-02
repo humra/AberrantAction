@@ -225,7 +225,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa88208c5f0de344885e188e0625c8f1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -320,6 +320,12 @@ MonoBehaviour:
   healthGlobeDropIndicator: {fileID: 1670209258617678}
   firingCue: {fileID: 1550830407018090}
   cueDuration: 3
+  damageTakenSoundEffect: {fileID: 8300000, guid: ce1d4327687af00408515104331b5841,
+    type: 3}
+  attackPowerupSoundEffect: {fileID: 8300000, guid: 1d3002efdbacbdb47bf9018b514f4e4d,
+    type: 3}
+  deathSoundEffect: {fileID: 8300000, guid: 219ae75164a950c44832a7f40819c42f, type: 3}
+  stunSoundEffect: {fileID: 8300000, guid: e6b8e6cf650a48144b18c381acf2bb84, type: 3}
 --- !u!212 &212030880044480428
 SpriteRenderer:
   m_ObjectHideFlags: 1

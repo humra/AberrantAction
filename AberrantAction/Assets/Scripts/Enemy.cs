@@ -38,6 +38,14 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float cueDuration = 2f;
     private float firingTimestamp;
+    [SerializeField]
+    private AudioClip damageTakenSoundEffect;
+    [SerializeField]
+    private AudioClip attackPowerupSoundEffect;
+    [SerializeField]
+    private AudioClip deathSoundEffect;
+    [SerializeField]
+    private AudioClip stunSoundEffect;
 
     void Start()
     {
@@ -50,8 +58,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(firingTimestamp - cueDuration <= Time.time)
+        if(firingTimestamp - cueDuration <= Time.time && !firingCue.active)
         {
+            GetComponent<AudioSource>().clip = attackPowerupSoundEffect;
+            GetComponent<AudioSource>().Play();
+
             ShowFiringCue();
         }
 
@@ -97,6 +108,10 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= Mathf.Floor(damage * damageTakenMultiplier);
+
+        GetComponent<AudioSource>().clip = damageTakenSoundEffect;
+        GetComponent<AudioSource>().Play();
+
         if (health <= 0)
         {
             target.RemoveFromTargets(this);
@@ -105,6 +120,12 @@ public class Enemy : MonoBehaviour
             {
                 DropHealthGlobe();
             }
+
+            //GetComponent<AudioSource>().clip = deathSoundEffect;
+            //GetComponent<AudioSource>().Play();
+
+            player.GetComponent<AudioSource>().clip = deathSoundEffect;
+            player.GetComponent<AudioSource>().Play();
 
             Destroy(gameObject);
         }
@@ -125,6 +146,7 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(StunDisable(stunDuration));
             player.StunActivated();
+            GetComponent<AudioSource>().clip = stunSoundEffect;
             GetComponent<AudioSource>().Play();
             firingTimestamp = Time.time + fireRateInSeconds;
             firingCue.SetActive(false);

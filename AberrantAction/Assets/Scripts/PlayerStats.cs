@@ -26,6 +26,9 @@ public class PlayerStats : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
+
+        FindObjectOfType<PlayerController>().DamageTakenSoundEffect();
+
         if(currentHP < 0)
         {
             currentHP = 0;

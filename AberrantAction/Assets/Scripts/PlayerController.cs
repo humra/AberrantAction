@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private AudioClip healthGlobeSoundEffect;
     [SerializeField]
+    private AudioClip damageTakenSoundEffect;
+    [SerializeField]
     private GameObject stunIndicator;
 	
 	void Start () {
@@ -70,6 +72,12 @@ public class PlayerController : MonoBehaviour {
     public void HealthGlobeSoundEffect()
     {
         GetComponent<AudioSource>().clip = healthGlobeSoundEffect;
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void DamageTakenSoundEffect()
+    {
+        GetComponent<AudioSource>().clip = damageTakenSoundEffect;
         GetComponent<AudioSource>().Play();
     }
 }

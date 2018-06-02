@@ -21,6 +21,10 @@ public class BossController : MonoBehaviour {
     [SerializeField]
     private float initialFiringDelay = 3f;
     private float firingTimestamp;
+    [SerializeField]
+    private AudioClip shootSoundEffect;
+    [SerializeField]
+    private AudioClip damageTakenSoundEffect;
 
 	void Start () {
         currentHP = maxHP;
@@ -49,6 +53,10 @@ public class BossController : MonoBehaviour {
     public void TakeDamage(float damage)
     {
         currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
+
+        GetComponent<AudioSource>().clip = damageTakenSoundEffect;
+        GetComponent<AudioSource>().Play();
+
         if (currentHP < 0)
         {
             currentHP = 0;
@@ -85,6 +93,9 @@ public class BossController : MonoBehaviour {
 
         BossProjectile instance = Instantiate(bossAttack, firingPoint.transform.position, firingPoint.transform.rotation);
         instance.SetTargetEnemy(target.gameObject);
+
+        GetComponent<AudioSource>().clip = shootSoundEffect;
+        GetComponent<AudioSource>().Play();
 
         firingTimestamp = Time.time + attackRate;
     }
