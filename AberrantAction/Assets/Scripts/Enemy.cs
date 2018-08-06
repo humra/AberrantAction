@@ -121,9 +121,6 @@ public class Enemy : MonoBehaviour
                 DropHealthGlobe();
             }
 
-            //GetComponent<AudioSource>().clip = deathSoundEffect;
-            //GetComponent<AudioSource>().Play();
-
             player.GetComponent<AudioSource>().clip = deathSoundEffect;
             player.GetComponent<AudioSource>().Play();
 
