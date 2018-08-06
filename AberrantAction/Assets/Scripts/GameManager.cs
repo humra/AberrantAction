@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private Text playerHealthBar;
     [SerializeField]
-    private Text bossHealthBar;
+    private SimpleHealthBar bossHealthBar;
+    private float bossMaxHealth;
     private PlayerStats playerStats;
     private PlayerController playerController;
     private BossController bossController;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour {
         bossController = boss.GetComponent<BossController>();
         playerController = player.GetComponent<PlayerController>();
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
-        bossHealthBar.text = bossController.GetCurrentHealth().ToString();
+        bossMaxHealth = bossController.GetMaxHP();
         InvokeRepeating("UpdateHPBar", 0.1f, 0.1f);
     }
 	
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour {
     public void UpdateHPBar()
     {
         playerHealthBar.text = playerStats.GetCurrentHealth().ToString();
-        bossHealthBar.text = bossController.GetCurrentHealth().ToString();
+        bossHealthBar.UpdateBar(bossController.GetCurrentHealth(), bossMaxHealth);
     }
 
     public void GameOver(string cause)

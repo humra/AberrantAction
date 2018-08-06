@@ -68,6 +68,11 @@ public class BossController : MonoBehaviour {
         return currentHP;
     }
 
+    public float GetMaxHP()
+    {
+        return maxHP;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("EnemyProjectile"))
