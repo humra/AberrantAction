@@ -404,6 +404,11 @@ Prefab:
       propertyPath: attackRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114628022509172012, guid: 7dbba605a198b304e866333dcf99d484,
+        type: 2}
+      propertyPath: maxHP
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dbba605a198b304e866333dcf99d484, type: 2}
   m_IsPrefabAsset: 0
