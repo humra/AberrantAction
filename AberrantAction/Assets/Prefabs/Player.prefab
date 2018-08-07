@@ -121,8 +121,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
-  m_Pitch: 0.7
+  m_Volume: 1
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   stunCooldown: 3
   healthGlobeSoundEffect: {fileID: 8300000, guid: 762507503f22b3b4bb6d08c9e0f35571,
     type: 3}
-  damageTakenSoundEffect: {fileID: 8300000, guid: fc49563c6a2ca7c4c952cbae17efcef6,
+  damageTakenSoundEffect: {fileID: 8300000, guid: 93f3381f327c6df4ea36a9a08e0a4c10,
     type: 3}
   stunIndicator: {fileID: 1233343873724052}
 --- !u!212 &212516836732090988
