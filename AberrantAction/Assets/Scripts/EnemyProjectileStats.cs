@@ -22,7 +22,7 @@ public class EnemyProjectileStats : MonoBehaviour {
 
     private void Update()
     {
-        rb.velocity = (GameObject.Find("Boss").transform.position - transform.position).normalized * speed;
+        rb.velocity = (GameObject.Find("Queen").transform.position - transform.position).normalized * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

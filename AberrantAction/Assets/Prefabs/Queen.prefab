@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 82262057791802844}
   - component: {fileID: 82351969102050860}
   m_Layer: 9
-  m_Name: Boss
+  m_Name: Queen
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,9 +185,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a1cffab7a50ace8489521075ed56ac84, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 445920c1decdf8e4eb88b88dafade0df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -282,7 +282,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e54613851d0431745b1e23d35c047d59, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.9
   m_Pitch: 1
   Loop: 0
   Mute: 0
