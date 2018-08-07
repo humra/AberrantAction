@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4307572567476758}
   - component: {fileID: 114612243053743764}
   - component: {fileID: 82524271991233836}
+  - component: {fileID: 114365557335798834}
   m_Layer: 12
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,7 +50,8 @@ AudioSource:
   m_GameObject: {fileID: 1399299939163040}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d82527694f55aa64d8407377cf21dd86,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e22fa3e46d8da6541a4781b04a05f0b8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
@@ -136,6 +138,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114365557335798834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399299939163040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901be91a51550524c82edbf95b8bd639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: d82527694f55aa64d8407377cf21dd86, type: 2}
+  resolutionDropdown: {fileID: 0}
 --- !u!114 &114612243053743764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,5 +168,6 @@ MonoBehaviour:
   bossHealthBar: {fileID: 0}
   gameOverScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
+  optionsScreen: {fileID: 0}
   levelCompleteScreen: {fileID: 0}
   timerText: {fileID: 0}

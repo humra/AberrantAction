@@ -331,6 +331,56 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 116072403}
+    - target: {fileID: 114489158254169096, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 754298141}
+    - target: {fileID: 114489158254169096, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929887260586372, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 754298141}
+    - target: {fileID: 114929887260586372, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFullscreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196015002758952, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 754298141}
+    - target: {fileID: 114196015002758952, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792727700661038, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 116072403}
+    - target: {fileID: 114792727700661038, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 114192306521394706, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 116072403}
+    - target: {fileID: 114192306521394706, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadDifferentScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a804b14423f24954db8070788debe7d3, type: 2}
   m_IsPrefabAsset: 0
@@ -362,6 +412,23 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 749996812}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &749996818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114489158254169096, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+  m_Script: {fileID: 853051423, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &749996819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1003036101441596, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+--- !u!114 &749996820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114929887260586372, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &754298140
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,9 +563,30 @@ Prefab:
       propertyPath: enemySpawnPoints.Array.data[9]
       value: 
       objectReference: {fileID: 1667213904}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: resolutionDropdown
+      value: 
+      objectReference: {fileID: 749996818}
+    - target: {fileID: 114612243053743764, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: optionsScreen
+      value: 
+      objectReference: {fileID: 749996819}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: fullscreenToggle
+      value: 
+      objectReference: {fileID: 749996820}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &754298141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+    type: 2}
+  m_PrefabInternal: {fileID: 754298140}
+  m_Script: {fileID: 11500000, guid: 901be91a51550524c82edbf95b8bd639, type: 3}
 --- !u!1 &813500045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1911292574952846, guid: 7dbba605a198b304e866333dcf99d484,

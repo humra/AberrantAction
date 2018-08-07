@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject pauseScreen;
     [SerializeField]
+    private GameObject optionsScreen;
+    [SerializeField]
     private GameObject levelCompleteScreen;
     [SerializeField]
     private Text timerText;
@@ -45,6 +47,12 @@ public class GameManager : MonoBehaviour {
         }
 
         timerText.text = ((int)Time.time).ToString();
+    }
+
+    public void ToggleOptions()
+    {
+        optionsScreen.SetActive(!optionsScreen.active);
+        pauseScreen.SetActive(!pauseScreen.active);
     }
 
     public void UpdateHPBar()
