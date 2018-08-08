@@ -378,7 +378,7 @@ Prefab:
     - target: {fileID: 114196015002758952, guid: a804b14423f24954db8070788debe7d3,
         type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolume
+      value: SetMusicVolume
       objectReference: {fileID: 0}
     - target: {fileID: 114792727700661038, guid: a804b14423f24954db8070788debe7d3,
         type: 2}
@@ -443,6 +443,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 749996812}
   m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &749996820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114196015002758952, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &749996821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114036310795910312, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 749996812}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &754298140
 Prefab:
   m_ObjectHideFlags: 0
@@ -592,6 +604,16 @@ Prefab:
       propertyPath: fullscreenToggle
       value: 
       objectReference: {fileID: 749996819}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: volumeSlider
+      value: 
+      objectReference: {fileID: 749996821}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 749996820}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf, type: 2}
   m_IsPrefabAsset: 0

@@ -9,9 +9,15 @@ public class SettingsMenu : MonoBehaviour {
     [SerializeField]
     private AudioMixer mainMixer;
     [SerializeField]
+    private AudioMixer musicMixer;
+    [SerializeField]
     private Dropdown resolutionDropdown;
     [SerializeField]
     private Toggle fullscreenToggle;
+    [SerializeField]
+    private Slider volumeSlider;
+    [SerializeField]
+    private Slider musicSlider;
     private Resolution[] resolutions;
 
     private void Start()
@@ -40,6 +46,12 @@ public class SettingsMenu : MonoBehaviour {
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
         fullscreenToggle.isOn = Screen.fullScreen;
+
+        float tempVolumeValue;
+        mainMixer.GetFloat("Volume", out tempVolumeValue);
+        volumeSlider.value = tempVolumeValue;
+        musicMixer.GetFloat("MusicVolume", out tempVolumeValue);
+        musicSlider.value = tempVolumeValue;
     }
 
     private bool CheckUniqueString(string testString, List<string> existingStrings)
@@ -63,6 +75,11 @@ public class SettingsMenu : MonoBehaviour {
     public void SetVolume(float volume)
     {
         mainMixer.SetFloat("Volume", volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicMixer.SetFloat("MusicVolume", volume);
     }
 
     public void SetFullscreen(bool isFullscreen)
