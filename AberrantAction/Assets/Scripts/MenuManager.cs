@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public void LoadTestingLevel()
-    {
-        SceneManager.LoadScene("TestingLevel");
-    }
-
     public void LoadLevel(string level)
     {
         SceneManager.LoadScene(level);
