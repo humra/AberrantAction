@@ -361,6 +361,30 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 310775572}
   m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
+--- !u!114 &310775574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114196015002758952, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &310775575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114036310795910312, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &310775576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114929887260586372, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &310775577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114489158254169096, guid: a804b14423f24954db8070788debe7d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 310775572}
+  m_Script: {fileID: 853051423, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &373502624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1682525044064102, guid: 6deb13a5769d5f9458f062571f909c14,
@@ -786,6 +810,26 @@ Prefab:
       value: 
       objectReference: {fileID: 114788851245767016, guid: 2f93eb3a10b1d8e4f9a7168be8719f05,
         type: 2}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: resolutionDropdown
+      value: 
+      objectReference: {fileID: 310775577}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: fullscreenToggle
+      value: 
+      objectReference: {fileID: 310775576}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: volumeSlider
+      value: 
+      objectReference: {fileID: 310775575}
+    - target: {fileID: 114365557335798834, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf,
+        type: 2}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 310775574}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d95b69152d4e2b4bafcd0b8b050ffdf, type: 2}
   m_IsPrefabAsset: 0
