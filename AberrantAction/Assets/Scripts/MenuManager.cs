@@ -14,4 +14,11 @@ public class MenuManager : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void ResetLevelProgress()
+    {
+        SaveLoad.levelsUnlocked = 1;
+        SaveLoad.Save();
+        FindObjectOfType<SaveLoadManager>().RefreshUnlockedLevels();
+    }
 }

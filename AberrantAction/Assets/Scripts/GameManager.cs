@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
     private GameObject levelCompleteScreen;
     [SerializeField]
     private Text timerText;
+    [SerializeField]
+    private int lastLevelNumber;
 
     void Start () {
         Time.timeScale = 1f;
@@ -89,5 +91,20 @@ public class GameManager : MonoBehaviour {
     {
         Time.timeScale = 0f;
         levelCompleteScreen.SetActive(true);
+
+        UnlockNextLevel();
+    }
+
+    private void UnlockNextLevel()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if(currentLevel == lastLevelNumber)
+        {
+            return;
+        }
+
+        SaveLoad.levelsUnlocked = currentLevel + 1;
+        SaveLoad.Save();
     }
 }
