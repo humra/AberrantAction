@@ -411,6 +411,8 @@ MonoBehaviour:
   - {fileID: 982217815}
   - {fileID: 2031273942}
   - {fileID: 1652994673}
+  previousSlideBtn: {fileID: 1710219741}
+  nextSlideBtn: {fileID: 635080358}
 --- !u!4 &726061546
 Transform:
   m_ObjectHideFlags: 0
@@ -1518,7 +1520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1851700587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1858,7 +1860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &2046590248
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1937,7 +1939,7 @@ MonoBehaviour:
 
     They will attack the queen.
 
-    An exclamation mark willl appear over enemie''s head when it''s about to fire.'
+    An exclamation mark willl appear over enemy''s head when it''s about to fire.'
 --- !u!222 &2129679771
 CanvasRenderer:
   m_ObjectHideFlags: 0

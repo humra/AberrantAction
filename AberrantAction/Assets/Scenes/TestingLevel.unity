@@ -352,6 +352,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114192306521394706, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 909510669}
+    - target: {fileID: 114192306521394706, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadDifferentScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a804b14423f24954db8070788debe7d3, type: 2}
   m_IsPrefabAsset: 0

@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject[] slides;
+    [SerializeField]
+    private Button previousSlideBtn;
+    [SerializeField]
+    private Button nextSlideBtn;
     private int activeSlideIndex = 0;
 
+    private void Start()
+    {
+        SetSlideButtonActive();
+    }
 
     public void NextSlide()
     {
@@ -42,6 +51,29 @@ public class TutorialManager : MonoBehaviour {
             {
                 slides[i].SetActive(false);
             }
+        }
+
+        SetSlideButtonActive();
+    }
+
+    private void SetSlideButtonActive()
+    {
+        if (activeSlideIndex == 0)
+        {
+            previousSlideBtn.gameObject.SetActive(false);
+        }
+        else
+        {
+            previousSlideBtn.gameObject.SetActive(true);
+        }
+
+        if(activeSlideIndex == slides.Length - 1)
+        {
+            nextSlideBtn.gameObject.SetActive(false);
+        }
+        else
+        {
+            nextSlideBtn.gameObject.SetActive(true);
         }
     }
 
