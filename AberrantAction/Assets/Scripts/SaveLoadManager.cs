@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SaveLoadManager : MonoBehaviour {
@@ -23,11 +21,6 @@ public class SaveLoadManager : MonoBehaviour {
 
     public void RefreshUnlockedLevels()
     {
-        //for (int i = 0; i < SaveLoad.levelsUnlocked; i++)
-        //{
-        //    gameLevelButtons[i].interactable = true;
-        //}
-
         for(int i = 0; i < gameLevelButtons.Length; i++)
         {
             if(i < SaveLoad.levelsUnlocked)
