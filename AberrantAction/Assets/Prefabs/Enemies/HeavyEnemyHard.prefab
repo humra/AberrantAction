@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4450182042967410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4406887546127888}
   - component: {fileID: 212030880044480428}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: StunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 60146664482778256}
   - component: {fileID: 82256969035343766}
   - component: {fileID: 114788851245767016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeavyEnemyHard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

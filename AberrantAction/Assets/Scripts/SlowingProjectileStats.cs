@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
 
-public class EnemyProjectileStats : MonoBehaviour {
+public class SlowingProjectileStats : MonoBehaviour {
 
     [SerializeField]
-    private float damage = 10f;
+    private float speedFactor = 0.75f;
+    [SerializeField]
+    private float slowDuration = 3f;
     [SerializeField]
     private float speed = 10f;
     private Rigidbody2D rb;
 
-    public float GetDamage()
+    public float GetSlow()
     {
-        return damage;
+        return speedFactor;
+    }
+
+    public float GetDuration()
+    {
+        return slowDuration;
     }
 
     private void Start()
@@ -20,7 +27,7 @@ public class EnemyProjectileStats : MonoBehaviour {
 
     public void Update()
     {
-        rb.velocity = (GameObject.Find("Queen").transform.position - transform.position).normalized * speed;
+        rb.velocity = (GameObject.Find("Player").transform.position - transform.position).normalized * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

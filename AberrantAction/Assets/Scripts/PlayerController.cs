@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     private float movementSpeed;
+    private float defaultMovementSpeed;
     [SerializeField]
     private float interpolation;
     private Vector2 facingDirection;
@@ -26,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         facingDirection = Vector2.zero;
         stunTimeStamp = Time.time;
+        defaultMovementSpeed = movementSpeed;
 	}
 	
 	
@@ -79,5 +78,15 @@ public class PlayerController : MonoBehaviour {
     {
         GetComponent<AudioSource>().clip = damageTakenSoundEffect;
         GetComponent<AudioSource>().Play();
+    }
+
+    public void SetMovementSpeed(float factor)
+    {
+        movementSpeed *= factor;
+    }
+
+    public void ResetMovementSpeed()
+    {
+        movementSpeed = defaultMovementSpeed;
     }
 }

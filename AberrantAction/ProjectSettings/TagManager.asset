@@ -9,6 +9,8 @@ TagManager:
   - Boss
   - BossProjectile
   - HealthGlobe
+  - SlowingProjectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Projectiles
   - Obstructions
   - Pickups
-  - 
+  - BossProjectile
   - 
   - 
   - 

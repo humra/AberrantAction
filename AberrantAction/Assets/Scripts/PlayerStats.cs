@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
@@ -12,19 +10,21 @@ public class PlayerStats : MonoBehaviour {
     [SerializeField]
     private float damageTakenMultiplier = 1f;
     private float currentHP;
+    private PlayerController playerController;
 
 	void Start () {
+        playerController = (PlayerController)FindObjectOfType<PlayerController>();
         currentHP = maxHP;
         InvokeRepeating("RegenerateHealth", 1f, 1f);
-	}
-	
-	
-	void Update () {
-		
 	}
 
     public void TakeDamage(float damage)
     {
+        if(damage == 0)
+        {
+            return;
+        }
+
         currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
 
         FindObjectOfType<PlayerController>().DamageTakenSoundEffect();
@@ -66,12 +66,31 @@ public class PlayerStats : MonoBehaviour {
             TakeDamage(collision.gameObject.GetComponent<EnemyProjectileStats>().GetDamage());
             Destroy(collision.gameObject);
         }
+        else if(collision.gameObject.tag.Equals("SlowingProjectile"))
+        {
+            SlowingProjectileStats projectile = (SlowingProjectileStats)collision.gameObject.GetComponent<SlowingProjectileStats>();
+            AdjustMovementSpeed(projectile.GetDuration(), projectile.GetSlow());
+            Destroy(collision.gameObject);
+        }
         else if(collision.gameObject.tag.Equals("HealthGlobe"))
         {
             RestoreHealth(collision.gameObject.GetComponent<HealthGlobe>().GetHealthRestored());
             FindObjectOfType<PlayerController>().HealthGlobeSoundEffect();
             Destroy(collision.gameObject);
         }
+    }
+
+    private void AdjustMovementSpeed(float duration, float speedFactor)
+    {
+        StopAllCoroutines();
+        playerController.SetMovementSpeed(speedFactor);
+        StartCoroutine(MovementSpeedTimeout(duration));
+    }
+
+    IEnumerator MovementSpeedTimeout(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        playerController.ResetMovementSpeed();
     }
 
     public void RestoreHealth(float healthAmount)
