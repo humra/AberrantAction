@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b37be97a4232374990e15bd78179fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 6.5
   interpolation: 0.8
   stunCooldown: 3
   healthGlobeSoundEffect: {fileID: 8300000, guid: 762507503f22b3b4bb6d08c9e0f35571,

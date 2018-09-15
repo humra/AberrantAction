@@ -325,9 +325,9 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 1400955160892154}
   health: 25
   damageTakenMultiplier: 1
-  fireRateInSeconds: 9
+  fireRateInSeconds: 7
   initialFiringDelayInSeconds: 3
-  stunDuration: 2
+  stunDuration: 1.75
   stunRange: 2
   stunSprite: {fileID: 212030880044480428}
   healthGlobeValue: 20
@@ -335,7 +335,7 @@ MonoBehaviour:
     type: 2}
   healthGlobeDropIndicator: {fileID: 1670209258617678}
   firingCue: {fileID: 1550830407018090}
-  cueDuration: 3
+  cueDuration: 4
   damageTakenSoundEffect: {fileID: 8300000, guid: f8b8f18dc210a2540a0799b650c32f61,
     type: 3}
   attackPowerupSoundEffect: {fileID: 8300000, guid: e59bea456785e9a4cb79b8c56d5a9b52,
