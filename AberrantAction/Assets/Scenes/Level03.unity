@@ -381,6 +381,25 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadDifferentScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1957339856863652, guid: a804b14423f24954db8070788debe7d3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034251417936722, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 116072403}
+    - target: {fileID: 114034251417936722, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadDifferentScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034251417936722, guid: a804b14423f24954db8070788debe7d3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a804b14423f24954db8070788debe7d3, type: 2}
   m_IsPrefabAsset: 0

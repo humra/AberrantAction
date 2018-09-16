@@ -325,7 +325,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 1400955160892154}
   health: 25
   damageTakenMultiplier: 1
-  fireRateInSeconds: 7
+  fireRateInSeconds: 6
   initialFiringDelayInSeconds: 3
   stunDuration: 1.75
   stunRange: 2
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1595592301
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300078, guid: 852f4cb3e0e771c4e9b51ad186c42108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -421,7 +421,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1595592301
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2f9f459856ea184e9ebfbdff65c5418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -467,7 +467,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1566249161
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300028, guid: 4efb85a84b2c84647b7e3f2625ae63f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -512,8 +512,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1263782613
-  m_SortingLayer: 1
+  m_SortingLayerID: 51220841
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300286, guid: 852f4cb3e0e771c4e9b51ad186c42108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

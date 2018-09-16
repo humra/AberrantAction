@@ -10,6 +10,12 @@ public class SlowingProjectileStats : MonoBehaviour {
     private float speed = 10f;
     private Rigidbody2D rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("IncreaseSpeed", 2f, 2f);
+    }
+
     public float GetSlow()
     {
         return speedFactor;
@@ -18,11 +24,6 @@ public class SlowingProjectileStats : MonoBehaviour {
     public float GetDuration()
     {
         return slowDuration;
-    }
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Update()
@@ -36,5 +37,10 @@ public class SlowingProjectileStats : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void IncreaseSpeed()
+    {
+        speed *= 1.1f;
     }
 }

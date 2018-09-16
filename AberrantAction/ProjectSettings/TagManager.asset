@@ -28,7 +28,7 @@ TagManager:
   - Pickups
   - BossProjectile
   - Boss
-  - 
+  - Rubble
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 1263782613
+    locked: 0
+  - name: GlobeIndicators
+    uniqueID: 51220841
     locked: 0
   - name: Units
     uniqueID: 1566249161

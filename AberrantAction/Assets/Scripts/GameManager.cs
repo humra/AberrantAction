@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject levelCompleteScreen;
     [SerializeField]
-    private Text timerText;
-    [SerializeField]
     private int lastLevelNumber;
 
     void Start () {
@@ -45,8 +43,6 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
         }
-
-        timerText.text = ((int)Time.time).ToString();
     }
 
     public void ToggleOptions()

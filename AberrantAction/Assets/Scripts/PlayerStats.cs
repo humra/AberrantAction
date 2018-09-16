@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour {
 	void Start () {
         playerController = (PlayerController)FindObjectOfType<PlayerController>();
         currentHP = maxHP;
-        InvokeRepeating("RegenerateHealth", 1f, 1f);
+        InvokeRepeating("RegenerateHealth", 0.5f, 0.5f);
 	}
 
     public void TakeDamage(float damage)
@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour {
     {
         if(currentHP < maxHP)
         {
-            currentHP += regenFactorPerSecond;
+            currentHP += regenFactorPerSecond / 2;
 
             if(currentHP > maxHP)
             {

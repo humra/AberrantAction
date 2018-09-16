@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1778610574017624}
   m_LocalRotation: {x: -0, y: -0, z: 0.9995846, w: -0.028821852}
-  m_LocalPosition: {x: 1.352942, y: 0.91562945, z: 0}
+  m_LocalPosition: {x: -0.5525038, y: 3.093938, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4919522105241388}
@@ -324,16 +324,16 @@ MonoBehaviour:
   health: 15
   damageTakenMultiplier: 1
   fireRateInSeconds: 7
-  initialFiringDelayInSeconds: 2.5
+  initialFiringDelayInSeconds: 3
   stunDuration: 1
   stunRange: 2
   stunSprite: {fileID: 212437164655684762}
-  healthGlobeValue: 15
+  healthGlobeValue: 10
   droppedGlobe: {fileID: 1692433349432096, guid: 00252e9bb15eb994eb5ba774b7244c4e,
     type: 2}
   healthGlobeDropIndicator: {fileID: 1338543333917856}
   firingCue: {fileID: 1002588295141554}
-  cueDuration: 1.5
+  cueDuration: 2
   damageTakenSoundEffect: {fileID: 8300000, guid: f8b8f18dc210a2540a0799b650c32f61,
     type: 3}
   attackPowerupSoundEffect: {fileID: 8300000, guid: e59bea456785e9a4cb79b8c56d5a9b52,
