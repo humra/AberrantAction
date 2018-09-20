@@ -7,8 +7,7 @@
 8;2;0;false
 12;1;0;false
 8;0;0;true
-7;5;0;false
-8;6;0;false
+12;5;0;false
 16;4;0;false
 9;0;0;false
 10;3;0;false
