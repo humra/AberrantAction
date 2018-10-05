@@ -1726,8 +1726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178, y: 233}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -178, y: 254}
+  m_SizeDelta: {x: 300, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032122960
 MonoBehaviour:
@@ -1762,7 +1762,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "This is you. \nYou can move around using WASD.\nThe green circle around
-    you is your stun range, if it's visible it means you can use your stun."
+    you is your stun range, if it's visible it means you can use your stun by left
+    clicking on an enemy."
 --- !u!222 &2032122961
 CanvasRenderer:
   m_ObjectHideFlags: 0
