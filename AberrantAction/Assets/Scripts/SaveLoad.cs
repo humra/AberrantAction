@@ -8,19 +8,17 @@ public static class SaveLoad {
 
     public static void Save()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
-        bf.Serialize(file, levelsUnlocked);
-        file.Close();
+        File.WriteAllText(Application.persistentDataPath + "/savedGames.txt", levelsUnlocked.ToString());
     }
 
     public static void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/savedGames.gd"))
+        if(File.Exists(Application.persistentDataPath + "/savedGames.txt"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
-            levelsUnlocked = (int)bf.Deserialize(file);
+            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.txt", FileMode.Open);
+            StreamReader reader = new StreamReader(file);
+            string tempLine = reader.ReadLine();
+            int.TryParse(tempLine, out levelsUnlocked);
             file.Close();
         }
     }
