@@ -18,28 +18,6 @@ public class PlayerStats : MonoBehaviour {
         InvokeRepeating("RegenerateHealth", 0.5f, 0.5f);
 	}
 
-    public void TakeDamage(float damage)
-    {
-        if(damage == 0)
-        {
-            return;
-        }
-
-        currentHP -= Mathf.Floor(damage * damageTakenMultiplier);
-
-        FindObjectOfType<PlayerController>().DamageTakenSoundEffect();
-
-        if(currentHP < 0)
-        {
-            currentHP = 0;
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        FindObjectOfType<GameManager>().GameOver("PLAYER");
-    }
 
     public float GetCurrentHealth()
     {
@@ -57,40 +35,6 @@ public class PlayerStats : MonoBehaviour {
                 currentHP = maxHP;
             }
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag.Equals("EnemyProjectile"))
-        {
-            TakeDamage(collision.gameObject.GetComponent<EnemyProjectileStats>().GetDamage());
-            Destroy(collision.gameObject);
-        }
-        else if(collision.gameObject.tag.Equals("SlowingProjectile"))
-        {
-            SlowingProjectileStats projectile = (SlowingProjectileStats)collision.gameObject.GetComponent<SlowingProjectileStats>();
-            AdjustMovementSpeed(projectile.GetDuration(), projectile.GetSlow());
-            Destroy(collision.gameObject);
-        }
-        else if(collision.gameObject.tag.Equals("HealthGlobe"))
-        {
-            RestoreHealth(collision.gameObject.GetComponent<HealthGlobe>().GetHealthRestored());
-            FindObjectOfType<PlayerController>().HealthGlobeSoundEffect();
-            Destroy(collision.gameObject);
-        }
-    }
-
-    private void AdjustMovementSpeed(float duration, float speedFactor)
-    {
-        StopAllCoroutines();
-        playerController.SetMovementSpeed(speedFactor);
-        StartCoroutine(MovementSpeedTimeout(duration));
-    }
-
-    IEnumerator MovementSpeedTimeout(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-        playerController.ResetMovementSpeed();
     }
 
     public void RestoreHealth(float healthAmount)
