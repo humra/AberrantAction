@@ -41,6 +41,8 @@ GameObject:
   - component: {fileID: 58532617254003478}
   - component: {fileID: 114215605759097480}
   - component: {fileID: 82862874033275146}
+  - component: {fileID: 114182698837713818}
+  - component: {fileID: 114794580564422834}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -206,6 +208,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114182698837713818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986885772393810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114794580564422834}
+  viewIdField: 0
+  InstantiationId: 1
+  isRuntimeInstantiated: 0
 --- !u!114 &114215605759097480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +262,20 @@ MonoBehaviour:
   damageTakenSoundEffect: {fileID: 8300000, guid: 93f3381f327c6df4ea36a9a08e0a4c10,
     type: 3}
   stunIndicator: {fileID: 1233343873724052}
+--- !u!114 &114794580564422834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986885772393810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!212 &212516836732090988
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -272,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1566249161
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a3a90ae9377e4f4a80256a1ac3e5084, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -318,7 +355,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1566249161
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17d59b709025e7e43827ba1cfd18f8b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
